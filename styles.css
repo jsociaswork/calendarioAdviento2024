@@ -15,20 +15,6 @@ body {
   gap: 10px;
 }
 
-.day {
-  background-color: #d3e5ff;
-  border: 1px solid #000;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-.day.locked {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -54,4 +40,83 @@ body {
 
 .hidden {
   display: none;
+}
+
+.day.traduce-coreano {
+  background: linear-gradient(to right, #ff0000 50%, #000080 50%);
+}
+
+.day.traduce-espanol {
+  background: linear-gradient(to right, #000080 50%, #ff0000 50%);
+}
+
+.day.pregunta-personal {
+  background-color: green;
+}
+
+.day.pregunta-ella {
+  background-color: yellow;
+  color: black;
+}
+
+.day.puzzle {
+  background-image: url('pieza-puzzle.png'); /* Reemplaza con la URL de tu imagen */
+  background-size: cover;
+  background-position: center;
+}
+
+/* General styling for calendar days */
+.day {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: grab;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.day.locked {
+  filter: grayscale(70%);
+  border: 2px solid gray;
+  cursor: not-allowed;
+}
+
+/* Number styling */
+.day::after {
+  content: attr(data-index);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1;
+  cursor: pointer; /* Indicar que es clickeable */
+  transition: all 0.3s ease;
+}
+
+/* Efecto de sombra al pasar el mouse */
+.day::after:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto de sombra al hacer clic */
+.day::after:active {
+  box-shadow: 0 12px 18px rgba(0, 0, 0, 0.3);
 }

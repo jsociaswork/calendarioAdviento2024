@@ -1,0 +1,33 @@
+const today = new Date().getDate();
+  
+const tests = [
+  { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/corea-esp2.jpg" },
+  { day: 2, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: "/imgs/esp-corea1.jpg" },
+  { day: 3, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
+  { day: 4, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
+  { day: 5, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
+  { day: 6, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/corea-esp1.jpg" },
+  { day: 7, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
+  { day: 8, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
+  { day: 9, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
+  { day: 10, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
+  { day: 11, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/coreano.png" },
+  { day: 12, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
+  { day: 13, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
+  { day: 14, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
+  { day: 15, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
+  { day: 16, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/coreano.png" },
+  { day: 17, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
+  { day: 18, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
+  { day: 19, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
+  { day: 20, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
+  { day: 21, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/coreano.png" },
+  { day: 22, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
+  { day: 23, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
+  { day: 24, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
+];
+
+const days = Array.from({ length: 24 }, (_, i) => ({
+  day: i + 1,
+  ...tests[i % tests.length],
+}));
