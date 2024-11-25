@@ -18,32 +18,45 @@ document.addEventListener("DOMContentLoaded", () => {
   const testAnswer = document.getElementById("testAnswer");
   const result = document.getElementById("result");
   const closeModal = document.getElementById("closeModal");
+  
+  const corea_esp1 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/corea-esp1.jpg';
+  const corea_esp2 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/corea-esp2.jpg';
+  const esp_corea1 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/esp-corea1.jpg';
+  // const esp_corea2 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/esp-corea1.jpg';
+  const esp_corea2 = '/imgs/esp-corea2.jpg';
+  const puzzle = '/imgs/puzzle.png';
+  // const puzzle2 = '/imgs/puzzle2.webp';
+  const puzzle2 = '/imgs/puzzle.png';
 
   const tests = [
-    { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/corea-esp2.jpg" },
-    { day: 2, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: "/imgs/esp-corea1.jpg" },
-    { day: 3, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
-    { day: 4, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
-    { day: 5, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
-    { day: 6, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/corea-esp1.jpg" },
-    { day: 7, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
-    { day: 8, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
-    { day: 9, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
-    { day: 10, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
-    { day: 11, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/coreano.png" },
-    { day: 12, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
-    { day: 13, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
-    { day: 14, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
-    { day: 15, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
-    { day: 16, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/coreano.png" },
-    { day: 17, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
-    { day: 18, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
-    { day: 19, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
-    { day: 20, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: "/imgs/puzzle.png" },
-    { day: 21, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: "/imgs/coreano.png" },
-    { day: 22, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: null },
-    { day: 23, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: "/imgs/personal.png" },
-    { day: 24, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza" },
+    { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
+    { day: 2, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
+    { day: 3, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+    { day: 4, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null},
+    { day: 5, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
+
+    { day: 6, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea1 },
+    { day: 7, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
+    { day: 8, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+    { day: 9, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
+    { day: 10, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
+
+    { day: 11, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
+    { day: 12, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
+    { day: 13, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+    { day: 14, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
+    { day: 15, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+
+    { day: 16, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
+    { day: 17, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
+    { day: 18, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+    { day: 19, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
+    { day: 20, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
+
+    { day: 21, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea1 },
+    { day: 22, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
+    { day: 23, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
+    { day: 24, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle },
   ];
 
   // Inicialización de progreso del usuario
@@ -75,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
         dayElement.style.backgroundPosition = "center";
         dayElement.style.color = "black";
       }
+      
+      dayElement.style.border = "2px solid black";
 
       // Bloquear días no disponibles
       if (dayData.day > today || (nickname && userProgress[nickname]?.includes(dayData.day))) {
@@ -183,5 +198,34 @@ document.addEventListener("DOMContentLoaded", () => {
     nicknameInput.value = nickname;
     updateCalendar();
   }
+
+  const snowflakesContainer = document.querySelector('.snowflakes');
+
+  // Generar copos de nieve aleatorios
+  function createSnowflakes() {
+    for (let i = 0; i < 50; i++) { // Cambia el número según la densidad deseada
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      let snowflakeSymbol;
+      const mr1 = Math.random() > 0.5;
+      const mr2 = Math.random() > 0.5;
+      if (mr1) {
+        snowflakeSymbol = '❄';
+      } else if (mr2) {
+        snowflakeSymbol = '❅';
+      } else {
+        snowflakeSymbol = '❆';
+      }
+      snowflake.textContent =snowflakeSymbol;
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.top = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = Math.random() * 3 + 4 + 's'; // Duración de caída
+      snowflake.style.animationDelay = Math.random() * 5 + 's'; // Retraso inicial
+      snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'rem'; // Tamaño variable
+      snowflakesContainer.appendChild(snowflake);
+    }
+  }
+
+  // createSnowflakes();
 
 });
