@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const esp_corea1 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/esp-corea1.jpg';
   // const esp_corea2 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/esp-corea1.jpg';
   const esp_corea2 = '/imgs/esp-corea2.jpg';
-  const puzzle = '/imgs/puzzle.png';
+  const puzzle = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/puzzle.png';
   // const puzzle2 = '/imgs/puzzle2.webp';
-  const puzzle2 = '/imgs/puzzle.png';
+  const puzzle2 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/puzzle.png';
 
   const tests = [
     { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2, answers: ["안녕하세요", "안녕"], codigo: 'Diviértete... por ahora jeje' },

@@ -25,7 +25,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('imgs/fondonavidad.webp') no-repeat center center fixed;
+  background: url('https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/fondonavidad.webp') no-repeat center center fixed;
   background-size: cover;
   z-index: -2;
   opacity: 0.9;
@@ -148,7 +148,7 @@ h1 span {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: url('imgs/acebo.webp') no-repeat center center;
+  background: url('https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/acebo.webp') no-repeat center center;
   background-size: contain;
   z-index: 1;
 }
@@ -210,7 +210,7 @@ h1 span {
 }
 
 .day.puzzle {
-  background-image: url('pieza-puzzle.png'); /* Reemplaza con la URL de tu imagen */
+  background-image: url('https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/puzzle.png'); /* Reemplaza con la URL de tu imagen */
   background-size: cover;
   background-position: center;
 }
