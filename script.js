@@ -5,8 +5,23 @@ commit 2 algunas imagenes
 , wip imgs puzzle y las pruebas ya realizadas marcarlas.
 */
 document.addEventListener("DOMContentLoaded", () => {
+  // Impedir clic derecho
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
 
+  // Impedir selección de texto
+  document.addEventListener("selectstart", (event) => event.preventDefault());
+
+  // Impedir copia con teclado
+  document.addEventListener("copy", (event) => event.preventDefault());
+  
   const today = new Date().getDate();
+
+  // let today = new Date();
+  // const dayOffset = 5; // Cambia según necesites
+  // // const specificDate = new Date(today);
+  // today.setDate(today.getDate() + dayOffset);
+  // console.log(today.getDate())
+  // today = today.getDate();
 
   // Variables del DOM
   const loginBtn = document.getElementById("loginBtn");
@@ -29,17 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const puzzle2 = '/imgs/puzzle.png';
 
   const tests = [
-    { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
-    { day: 2, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
-    { day: 3, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
-    { day: 4, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null},
-    { day: 5, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
+    { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2, answers: ["안녕하세요", "안녕"], codigo: 'Diviértete... por ahora jeje' },
+    { day: 2, type: "traduce-espanol", question: "Traduce '사랑해요' al español", answer: "te amo", image: corea_esp2, answers: ["te amo", "te quiero"] },
+    { day: 3, type: "pregunta-personal", question: "¿Cuál es el color favorito de él 🐀?", answer: "verde", image: null },
+    { day: 4, type: "pregunta-ella", question: "¿Qué comida le gusta más a mi sweetie 💛?", answer: "huevos fritos", image: null, answers: ["huevos fritos", "huevos fritos con patatas fritas", "huevos fritos y patatas fritas"]},
+    { day: 5, type: "pregunta-ella", question: "¿Cuál es mi color favorito?", answer: "amarillo", image: null },
 
-    { day: 6, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea1 },
+    { day: 6, type: "traduce-coreano", question: "Traduce 'Nariz, labio, oreja, ojo' al coreano", answer: "코, 입술, 귀, 눈", image: esp_corea1, answers: ["코, 입술, 귀, 눈","코, 입술, 눈, 귀","코, 귀, 입술, 눈","코, 귀, 눈, 입술","코, 눈, 입술, 귀","코, 눈, 귀, 입술","입술, 코, 귀, 눈","입술, 코, 눈, 귀","입술, 귀, 코, 눈","입술, 귀, 눈, 코","입술, 눈, 코, 귀","입술, 눈, 귀, 코","귀, 코, 입술, 눈","귀, 코, 눈, 입술","귀, 입술, 코, 눈","귀, 입술, 눈, 코","귀, 눈, 코, 입술","귀, 눈, 입술, 코","눈, 코, 입술, 귀","눈, 코, 귀, 입술","눈, 입술, 코, 귀","눈, 입술, 귀, 코","눈, 귀, 코, 입술","눈, 귀, 입술, 코"] },
     { day: 7, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
     { day: 8, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
     { day: 9, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
-    { day: 10, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
+    { day: 10, type: "puzzle", question: "¿De dónde es la imagen del fondo?", answer: "hallstatt", image: puzzle2 },
 
     { day: 11, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
     { day: 12, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
@@ -92,8 +107,29 @@ document.addEventListener("DOMContentLoaded", () => {
       dayElement.style.border = "2px solid black";
 
       // Bloquear días no disponibles
-      if (dayData.day > today || (nickname && userProgress[nickname]?.includes(dayData.day))) {
+      if (dayData.day > today) {
         dayElement.classList.add("locked");
+      } else if ((nickname && userProgress[nickname]?.includes(dayData.day))) {
+        dayElement.classList.add("completed");
+        setTimeout(() => {
+          // Eliminar todos los event listeners sin necesidad de almacenarlos
+          document.querySelectorAll('.day.completed').forEach(day1 => {
+            const newDay = day1.cloneNode(true);  // Clona el nodo y elimina los listeners
+            day1.parentNode.replaceChild(newDay, day1);  // Reemplaza el original
+          });
+  
+          // Manejar el clic en los días con la clase 'completed'
+          document.querySelectorAll('.day.completed').forEach(day2 => {
+            day2.addEventListener('click', () => {
+              let dayData2 = tests.find(test => test.day == day2.getAttribute('data-index'));
+              dayData2.question = dayData2.question + ' ' + dayData2.answer;
+              dayData2 = { ...dayData2, showCodigo: true };
+              
+              // Llamar a la función que abre el modal
+              openTest(dayData2);
+            });
+          });
+        }, 250);
       } else {
         // Evento de clic para abrir la prueba
         dayElement.addEventListener("click", () => openTest(dayData));
@@ -116,6 +152,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Guardar el orden en localStorage
   function saveOrder(nickname, order) {
     localStorage.setItem(`order_${nickname}`, JSON.stringify(order));
+    if ('[17,2,20,18,13,23,8,10,7,14,19,4,21,24,6,16,1,11,5,15,22,12,9,3]' == JSON.stringify(order)) {
+      // alert('PRUEBA COMPLETADÍSIMA!!')
+      let dayData = {
+        question: 'PRUEBA COMPLETADÍSIMA!!',
+        day: 24,
+        finish: true
+      }
+      openTest(dayData)
+    }
   }
 
   // Obtener el orden guardado en localStorage
@@ -126,25 +171,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Función para abrir el modal de la prueba
   function openTest(dayData) {
-    testModal.style.display = "block";
-    testTitle.textContent = `Prueba del Día ${dayData.day}`;
-    testQuestion.textContent = dayData.question;
-    testAnswer.value = "";
-    result.textContent = "";
+    if (dayData.showCodigo) {
+      testModal.style.display = "block";
+      testTitle.textContent = `Prueba del Día ${dayData.day}`;
+      testQuestion.textContent = dayData.question;
+      testAnswer.style.display = 'none';
+      document.getElementById("submitAnswer").style.display = 'none';
+      result.textContent = dayData.codigo ?? "¡Correcto!";
+      result.style.color = "green";
+    } else {
+      testModal.style.display = "block";
+      testTitle.textContent = `Prueba del Día ${dayData.day}`;
+      testQuestion.textContent = dayData.question;
+      testAnswer.value = "";
+      result.textContent = "";
+      testAnswer.style.display = 'block';
+      document.getElementById("submitAnswer").style.display = 'block';
+      if (dayData.finish) {
+        testAnswer.style.display = 'none';
+        document.getElementById("submitAnswer").style.display = 'none';
+      }
 
-    document.getElementById("submitAnswer").onclick = () => {
-      if (testAnswer.value.trim() === dayData.answer) {
-        result.textContent = "¡Correcto!";
-        result.style.color = "green";
-        userProgress[nickname] = [...new Set([...userProgress[nickname], dayData.day])];
-        localStorage.setItem("progress", JSON.stringify(userProgress));
-        updateCalendar(); // Actualizar el calendario después de completar la prueba
-      } else {
-        result.textContent = "Sigue intentando...";
-        result.style.color = "red";
+      document.getElementById("submitAnswer").onclick = () => {
+        let isCorrect = false;
+        if (dayData.answers) {
+          const userAnswer = testAnswer.value.trim().toLowerCase();
+          isCorrect = dayData.answers.some(answer => userAnswer === answer.toLowerCase());
+        }
+        
+        if (!isCorrect) {
+          isCorrect = testAnswer.value.trim().toLowerCase() === dayData.answer.toLowerCase();
+        }
+        if (isCorrect) {
+          result.textContent = dayData.codigo ?? "¡Correcto!";
+          result.style.color = "green";
+          document.getElementById("submitAnswer").style.display = 'none';
+          userProgress[nickname] = [...new Set([...userProgress[nickname], dayData.day])];
+          localStorage.setItem("progress", JSON.stringify(userProgress));
+          updateCalendar(); // Actualizar el calendario después de completar la prueba
+        } else {
+          result.textContent = dayData.errort ?? "Sigue intentando...";
+          result.style.color = "red";
+        }
       }
     };
   }
+
+  document.getElementById('info-icon').addEventListener('click', () => {
+    const dayData = { 
+        day: 'Informativa', 
+        type: "traduce-coreano", 
+        question: "Información: puedes iniciar sesión tantas veces como quieras, el progreso va por usuario y los usuarios solo se guardan en cada ordenador/dispositivo móvil. Puedes arrastrar los días para reordenarlos incluso aunque estén bloqueados. Colores: Negro ⚫ Prueba disponible | Rojo 🔴 no disponible hasta que llegue el día | Verde 🟢 superada y puedes volver a clicarla para ver la pregunta, la respuesta y...", 
+        finish: true
+    };
+    openTest(dayData);
+  });
 
   // Cerrar el modal de la prueba
   closeModal.addEventListener("click", () => {
@@ -199,6 +280,26 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCalendar();
   }
 
+  // completed
+
+  // Eliminar todos los event listeners sin necesidad de almacenarlos
+  document.querySelectorAll('.day.completed').forEach(day => {
+    const newDay = day.cloneNode(true);  // Clona el nodo y elimina los listeners
+    day.parentNode.replaceChild(newDay, day);  // Reemplaza el original
+  });
+
+  // Manejar el clic en los días con la clase 'completed'
+  document.querySelectorAll('.day.completed').forEach(day => {
+    day.addEventListener('click', () => {
+      let dayData = tests.find(test => test.day == day.getAttribute('data-index'));
+      dayData.question = dayData2.question + ' ' + dayData.answer;
+      dayData = { ...dayData, showCodigo: true };
+      
+      // Llamar a la función que abre el modal
+      openTest(dayData);
+    });
+  });
+
   const snowflakesContainer = document.querySelector('.snowflakes');
 
   // Generar copos de nieve aleatorios
@@ -226,6 +327,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // createSnowflakes();
+  createSnowflakes();
 
 });
