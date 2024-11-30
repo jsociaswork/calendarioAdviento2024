@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const puzzle2 = 'https://raw.githubusercontent.com/jsociaswork/calendarioAdviento2024/refs/heads/main/imgs/puzzle.png';
 
   const tests = [
-    { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2, answers: ["안녕하세요", "안녕"], codigo: 'Diviértete... por ahora jeje' },
+    { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2, answers: ["안녕하세요", "안녕"], codigo: 'Coge las llaves del coche de él, ves y ábrelo' },
     { day: 2, type: "traduce-espanol", question: "Traduce '사랑해요' al español", answer: "te amo", image: corea_esp2, answers: ["te amo", "te quiero"] },
     { day: 3, type: "pregunta-personal", question: "¿Cuál es el color favorito de él 🐀?", answer: "verde", image: null },
     { day: 4, type: "pregunta-ella", question: "¿Qué comida le gusta más a mi sweetie 💛?", answer: "huevos fritos", image: null, answers: ["huevos fritos", "huevos fritos con patatas fritas", "huevos fritos y patatas fritas"]},
