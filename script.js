@@ -122,8 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
           document.querySelectorAll('.day.completed').forEach(day2 => {
             day2.addEventListener('click', () => {
               let dayData2 = tests.find(test => test.day == day2.getAttribute('data-index'));
-              dayData2.question = dayData2.question + ' ' + dayData2.answer;
-              dayData2 = { ...dayData2, showCodigo: true };
+              let questionanswer =  dayData2.question + ': ' + dayData2.answer;
+              dayData2 = { ...dayData2, showCodigo: true, questionAnswer: questionanswer };
               
               // Llamar a la función que abre el modal
               openTest(dayData2);
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (dayData.showCodigo) {
       testModal.style.display = "block";
       testTitle.textContent = `Prueba del Día ${dayData.day}`;
-      testQuestion.textContent = dayData.question;
+      testQuestion.textContent = dayData.questionAnswer ?? dayData.question;
       testAnswer.style.display = 'none';
       document.getElementById("submitAnswer").style.display = 'none';
       result.textContent = dayData.codigo ?? "¡Correcto!";
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       testModal.style.display = "block";
       testTitle.textContent = `Prueba del Día ${dayData.day}`;
-      testQuestion.textContent = dayData.question;
+      testQuestion.textContent = dayData.questionAnswer ?? dayData.question;
       testAnswer.value = "";
       result.textContent = "";
       testAnswer.style.display = 'block';
@@ -291,9 +291,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Manejar el clic en los días con la clase 'completed'
   document.querySelectorAll('.day.completed').forEach(day => {
     day.addEventListener('click', () => {
-      let dayData = tests.find(test => test.day == day.getAttribute('data-index'));
-      dayData.question = dayData2.question + ' ' + dayData.answer;
-      dayData = { ...dayData, showCodigo: true };
+      let dayData = JSON.parse(tests.find(test => test.day == day.getAttribute('data-index')));
+      let questionanswer =  dayData.question + ': ' + dayData.answer
+      dayData = { ...dayData, showCodigo: true, questionAnswer: questionanswer };
       
       // Llamar a la función que abre el modal
       openTest(dayData);
