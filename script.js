@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Impedir copia con teclado
   document.addEventListener("copy", (event) => event.preventDefault());
   
-  const today = new Date().getDate();
+  // const today = new Date().getDate();
 
-  // let today = new Date();
-  // const dayOffset = 5; // Cambia según necesites
-  // // const specificDate = new Date(today);
-  // today.setDate(today.getDate() + dayOffset);
-  // console.log(today.getDate())
-  // today = today.getDate();
+  let today = new Date();
+  const dayOffset = 9; // Cambia según necesites
+  // const specificDate = new Date(today);
+  today.setDate(today.getDate() + dayOffset);
+  console.log(today.getDate())
+  today = today.getDate();
 
   // Variables del DOM
   const loginBtn = document.getElementById("loginBtn");
@@ -45,15 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const tests = [
     { day: 1, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2, answers: ["안녕하세요", "안녕"], codigo: 'Coge las llaves del coche de él, ves y ábrelo' },
-    { day: 2, type: "traduce-espanol", question: "Traduce '사랑해요' al español", answer: "te amo", image: corea_esp2, answers: ["te amo", "te quiero"] },
-    { day: 3, type: "pregunta-personal", question: "¿Cuál es el color favorito de él 🐀?", answer: "verde", image: null },
-    { day: 4, type: "pregunta-ella", question: "¿Qué comida le gusta más a mi sweetie 💛?", answer: "huevos fritos", image: null, answers: ["huevos fritos", "huevos fritos con patatas fritas", "huevos fritos y patatas fritas"]},
-    { day: 5, type: "pregunta-ella", question: "¿Cuál es mi color favorito?", answer: "amarillo", image: null },
-
-    { day: 6, type: "traduce-coreano", question: "Traduce 'Nariz, labio, oreja, ojo' al coreano", answer: "코, 입술, 귀, 눈", image: esp_corea1, answers: ["코, 입술, 귀, 눈","코, 입술, 눈, 귀","코, 귀, 입술, 눈","코, 귀, 눈, 입술","코, 눈, 입술, 귀","코, 눈, 귀, 입술","입술, 코, 귀, 눈","입술, 코, 눈, 귀","입술, 귀, 코, 눈","입술, 귀, 눈, 코","입술, 눈, 코, 귀","입술, 눈, 귀, 코","귀, 코, 입술, 눈","귀, 코, 눈, 입술","귀, 입술, 코, 눈","귀, 입술, 눈, 코","귀, 눈, 코, 입술","귀, 눈, 입술, 코","눈, 코, 입술, 귀","눈, 코, 귀, 입술","눈, 입술, 코, 귀","눈, 입술, 귀, 코","눈, 귀, 코, 입술","눈, 귀, 입술, 코"] },
-    { day: 7, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
-    { day: 8, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
-    { day: 9, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
+    { day: 2, type: "traduce-espanol", question: "Traduce '사랑해요' al español", answer: "te amo", image: corea_esp2, answers: ["te amo", "te quiero"], codigo:'Código 125' },
+    { day: 3, type: "pregunta-personal", question: "¿Cuál es el color favorito de él 🐀?", answer: "녹색", errort: "Ahora en el idioma que estás practicando", image: null, codigo: 222 },
+    { day: 4, type: "pregunta-ella", question: "¿Cuál es el color favorito de ella?", answer: "노란색", errort: "Ahora en el idioma que estás practicando", image: null, codigo: 111 },
+    { day: 5, type: "pregunta-ella", question: "¿Qué comida le gusta más a mi sweetie 💛?", answer: "huevos fritos", image: null, answers: ["huevos fritos", "huevos fritos con patatas fritas", "huevos fritos y patatas fritas"], errort: "Esta vez sí que es en español 😜", codigo: 888 },
+    // , errort: "Cuando aciertes te quedas con la bolsa 5 o con la X"
+    { day: 6, type: "traduce-coreano", question: "Traduce 'Nariz, labio, oreja, ojo' al coreano", answer: "코, 입술, 귀, 눈", image: esp_corea1, answers: ["코, 입술, 귀, 눈","코, 입술, 눈, 귀","코, 귀, 입술, 눈","코, 귀, 눈, 입술","코, 눈, 입술, 귀","코, 눈, 귀, 입술","입술, 코, 귀, 눈","입술, 코, 눈, 귀","입술, 귀, 코, 눈","입술, 귀, 눈, 코","입술, 눈, 코, 귀","입술, 눈, 귀, 코","귀, 코, 입술, 눈","귀, 코, 눈, 입술","귀, 입술, 코, 눈","귀, 입술, 눈, 코","귀, 눈, 코, 입술","귀, 눈, 입술, 코","눈, 코, 입술, 귀","눈, 코, 귀, 입술","눈, 입술, 코, 귀","눈, 입술, 귀, 코","눈, 귀, 코, 입술","눈, 귀, 입술, 코"], codigo: 666, errort: "Da igual el orden, lo imporante es separar por ','" },
+    { day: 7, type: "traduce-espanol", question: "Traduce '돼지' al español", answer: "cerdo", image: corea_esp1, codigo: 'Si sueñas con un cerdo, La Smorfia dice que se relaciona con el número 4.', errort: "豚 (Buta)" },
+    { day: 8, type: "pregunta-personal", question: "¿Cuál es la comida favorita de él?", answer: "bistecs rebozados", ansers: ["todo menos la ensaladilla", "todo menos la mayonesa", "bistecs rebozados", "excepto la mayonesa", "excepto la ensaladilla"], image: null, codigo: 'Bolsa 8 disponible para abrir', errort: "Excepto una cosa ..."},
+    { day: 9, type: "pregunta-ella", question: "¿Qué cantante es el favorito de ella?", answer: "유기현", image: null, errort: "No no no, novata. La respuesta en Hangul o el nombre completo incluyendo el -", answers: ["Yoo Ki-hyun", "유기현"], codigo: "Bolsa Monsta X o código 102 (Solo 1 de las 2)" },
     { day: 10, type: "puzzle", question: "¿De dónde es la imagen del fondo?", answer: "hallstatt", image: puzzle2 },
 
     { day: 11, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     { day: 21, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea1 },
     { day: 22, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
-    { day: 23, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
-    { day: 24, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle },
+    { day: 23, type: "puzzle", question: "¿Qué significado tiene el 1er código?", answer: "aniversario", answers: ["nuestro aniversario"], image: puzzle2, codigo: "" },
+    { day: 24, type: "puzzle", question: "Ordena el calendario igual que los eventos recibidos en whatssapp", answer: "completado", image: puzzle },
   ];
 
   // Inicialización de progreso del usuario
