@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Impedir copia con teclado
   document.addEventListener("copy", (event) => event.preventDefault());
   
-  // const today = new Date().getDate();
+  const today = new Date().getDate();
 
-  let today = new Date();
-  const dayOffset = 9; // Cambia según necesites
+  // let today = new Date();
+  // const dayOffset = 9; // Cambia según necesites
   // const specificDate = new Date(today);
-  today.setDate(today.getDate() + dayOffset);
-  console.log(today.getDate())
-  today = today.getDate();
+  // today.setDate(today.getDate() + dayOffset);
+  // console.log(today.getDate())
+  // today = today.getDate();
 
   // Variables del DOM
   const loginBtn = document.getElementById("loginBtn");
