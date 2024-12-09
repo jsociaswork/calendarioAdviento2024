@@ -54,11 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
     { day: 7, type: "traduce-espanol", question: "Traduce '돼지' al español", answer: "cerdo", image: corea_esp1, codigo: 'Si sueñas con un cerdo, La Smorfia dice que se relaciona con el número 4.', errort: "豚 (Buta)" },
     { day: 8, type: "pregunta-personal", question: "¿Cuál es la comida favorita de él?", answer: "bistecs rebozados", ansers: ["todo menos la ensaladilla", "todo menos la mayonesa", "bistecs rebozados", "excepto la mayonesa", "excepto la ensaladilla"], image: null, codigo: 'Bolsa 8 disponible para abrir', errort: "Mmmm que hambre :P"},
     { day: 9, type: "pregunta-ella", question: "¿Qué cantante es el favorito de ella?", answer: "유기현", image: null, errort: "No no no, novata. La respuesta en Hangul o el nombre completo incluyendo el -", answers: ["Yoo Ki-hyun", "유기현"], codigo: "Bolsa Monsta X o código 102 (Solo 1 de las 2)" },
-    { day: 10, type: "puzzle", question: "¿De dónde es la imagen del fondo?", answer: "hallstatt", image: puzzle2 },
+    { day: 10, type: "puzzle", question: "¿De dónde es la imagen del fondo?", answer: "hallstatt", image: puzzle2, codigo: "169" },
 
-    { day: 11, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
-    { day: 12, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
-    { day: 13, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+    { day: 11, type: "traduce-coreano", question: "이름이 뭐예요？", answer: "벨렌", answers: ["벨렌", "벨렌", "출생", "장면", "출생 장면", "벨렌치"], image: esp_corea2, codigo: "103" },
+    { day: 12, type: "traduce-espanol", question: "Traduce '책' al español", answer: "libro", image: corea_esp2, codigo: "301" },
+    { day: 13, type: "pregunta-personal", question: "¿Cuál es la película de Star Wars favorita de él?", answer: "Rogue one", image: null, codigo: "045"},
     { day: 14, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
     { day: 15, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
 
