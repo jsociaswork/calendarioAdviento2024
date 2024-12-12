@@ -58,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     { day: 11, type: "traduce-coreano", question: "이름이 뭐예요？", answer: "벨렌", answers: ["벨렌", "벨렌", "출생", "장면", "출생 장면", "벨렌치"], image: esp_corea2, codigo: "103" },
     { day: 12, type: "traduce-espanol", question: "Traduce '책' al español", answer: "libro", image: corea_esp2, codigo: "301" },
-    { day: 13, type: "pregunta-personal", question: "¿Cuál es la película de Star Wars favorita de él?", answer: "Rogue one", image: null, codigo: "045"},
-    { day: 14, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
-    { day: 15, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
+    { day: 13, type: "pregunta-personal", question: "¿Cuál es la película de Star Wars favorita de él?", answer: "Rogue one", image: null, codigo: "045 y Bolsa 13F disponible para abrir"},
+    { day: 14, type: "pregunta-ella", question: "¿Cuál es la película de animación favorita de ella?", answer: "Como entrenar a tu dragón", image: null, answers: ["Como entrenar a tu dragon 1", "Como entrenar a tu dragón 1", "Como entrenar a tu dragón", "Como entrenar a tu dragon", "Mulan", "Mulán", "Kiki"], errort: "Si anda! Esa no es 💢!!", codigo: 'Bolsa 14 disponible para abrir' },
+    { day: 15, type: "pregunta-personal", question: "¿Qué le dijo él a su profe que quería ser cuando fuera mayor?", answer: "🤡", image: null, errort: "Jeje responde con emoji 😜", codigo: 'Bolsa 15 disponible para abrir' },
 
     { day: 16, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
     { day: 17, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
