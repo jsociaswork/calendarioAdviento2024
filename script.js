@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { day: 15, type: "pregunta-personal", question: "¿Qué le dijo él a su profe que quería ser cuando fuera mayor?", answer: "🤡", image: null, errort: "Jeje responde con emoji 😜", codigo: 'Bolsa 15 disponible para abrir' },
 
     { day: 16, type: "traduce-coreano", question: "Traduce 'Tengo dos manzanas' al coreano", answer: "사과 두 개가 있어요", answers:["사과 두 개가 있어요", "사과 두 개가 있습니다"], codigo: "752", image: esp_corea2 },
-    { day: 17, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
+    { day: 17, type: "traduce-espanol", question: "Traduce '읽다' al español", answer: "leer", answers: ["leer"], image: corea_esp1, codigo: 951 },
     { day: 18, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
     { day: 19, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
     { day: 20, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
