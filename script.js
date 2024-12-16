@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { day: 14, type: "pregunta-ella", question: "¿Cuál es la película de animación favorita de ella?", answer: "Como entrenar a tu dragón", image: null, answers: ["Como entrenar a tu dragon 1", "Como entrenar a tu dragón 1", "Como entrenar a tu dragón", "Como entrenar a tu dragon", "Mulan", "Mulán", "Kiki"], errort: "Si anda! Esa no es 💢!!", codigo: 'Bolsa 14 disponible para abrir' },
     { day: 15, type: "pregunta-personal", question: "¿Qué le dijo él a su profe que quería ser cuando fuera mayor?", answer: "🤡", image: null, errort: "Jeje responde con emoji 😜", codigo: 'Bolsa 15 disponible para abrir' },
 
-    { day: 16, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea2 },
+    { day: 16, type: "traduce-coreano", question: "Traduce 'Tengo dos manzanas' al coreano", answer: "사과 두 개가 있어요", answers:["사과 두 개가 있어요", "사과 두 개가 있습니다"], codigo: "752", image: esp_corea2 },
     { day: 17, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp1 },
     { day: 18, type: "pregunta-personal", question: "¿Cuál es mi color favorito?", answer: "azul", image: null },
     { day: 19, type: "pregunta-ella", question: "¿Qué comida te gusta más?", answer: "pizza", image: null },
