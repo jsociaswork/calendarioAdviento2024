@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     { day: 16, type: "traduce-coreano", question: "Traduce 'Tengo dos manzanas' al coreano", answer: "사과 두 개가 있어요", answers:["사과 두 개가 있어요", "사과 두 개가 있습니다"], codigo: "752", image: esp_corea2 },
     { day: 17, type: "traduce-espanol", question: "Traduce '읽다' al español", answer: "leer", answers: ["leer"], image: corea_esp1, codigo: 951 },
-    { day: 18, type: "pregunta-personal", question: "¿Cuál es la rebanada de pamboli favorita de él?", answer: "jamón york con mostaza", image: null, answers: ["york mostaza", "jamon york y mostaza", "jamón york y mostaza", "jamon york con mostaza", "mostaza y jamón york", "mostaza y jamon york", "mostaza con jamón york", "mostaza con jamon york"], codigo: "408", errort: "🐖" },
+    { day: 18, type: "pregunta-personal", question: "¿Cuál es la rebanada de pamboli favorita de él?", answer: "jamón york con mostaza", image: null, answers: ["york mostaza", "jamon york y mostaza", "jamón york y mostaza", "jamon york con mostaza", "mostaza y jamón york", "mostaza y jamon york", "mostaza con jamón york", "mostaza con jamon york", "york mostaza", "jamón york mostaza", "jamon york mostaza", "mostaza york", "mostaza jamón york", "mostaza jamon york"], codigo: "408", errort: "🐖" },
     { day: 19, type: "pregunta-ella", question: "¿Cuál es el animal favorito de ella?", answer: "🐖", image: null, codigo: 444, errort: "No no no... Pista en la respuesta 15" },
     { day: 20, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
 
