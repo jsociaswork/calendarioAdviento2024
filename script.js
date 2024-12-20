@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { day: 17, type: "traduce-espanol", question: "Traduce '읽다' al español", answer: "leer", answers: ["leer"], image: corea_esp1, codigo: 951 },
     { day: 18, type: "pregunta-personal", question: "¿Cuál es la rebanada de pamboli favorita de él?", answer: "jamón york con mostaza", image: null, answers: ["york mostaza", "jamon york y mostaza", "jamón york y mostaza", "jamon york con mostaza", "mostaza y jamón york", "mostaza y jamon york", "mostaza con jamón york", "mostaza con jamon york", "york mostaza", "jamón york mostaza", "jamon york mostaza", "mostaza york", "mostaza jamón york", "mostaza jamon york"], codigo: "408", errort: "🐖" },
     { day: 19, type: "pregunta-ella", question: "¿Cuál es el animal favorito de ella?", answer: "🐖", image: null, codigo: 444, errort: "No no no... Pista en la respuesta 15" },
-    { day: 20, type: "puzzle", question: "Arma el puzzle interactivo", answer: "completado", image: puzzle2 },
+    { day: 20, type: "puzzle", question: "¿Qué significado tiene el 1er código?", answer: "aniversario", answers: ["nuestro aniversario"], image: puzzle2, codigo: "023" },
 
     { day: 21, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea1 },
     { day: 22, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
