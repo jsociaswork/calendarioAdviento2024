@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { day: 19, type: "pregunta-ella", question: "¿Cuál es el animal favorito de ella?", answer: "🐖", image: null, codigo: 444, errort: "No no no... Pista en la respuesta 15" },
     { day: 20, type: "puzzle", question: "¿Qué significado tiene el 1er código?", answer: "aniversario", answers: ["nuestro aniversario"], image: puzzle2, codigo: "023" },
 
-    { day: 21, type: "traduce-coreano", question: "Traduce 'Hola' al coreano", answer: "안녕하세요", image: esp_corea1 },
-    { day: 22, type: "traduce-espanol", question: "Traduce '사랑' al español", answer: "amor", image: corea_esp2 },
+    { day: 21, type: "traduce-coreano", question: "Traduce '¿Cómo estás' al coreano", answer: "어떻게 지내세요?", answers: ["잘 지내?", "어떻게 지내세요?", "안녕하세요?", "잘 지내시나요?", "잘 지내셨나요?"], codigo: "잘 지냅니다. Yo bien gracias o 괜찮아요, 감사합니다 Bolsa 21 disponible", image: esp_corea1 },
+    { day: 22, type: "traduce-espanol", question: "Traduce '메리 크리스마스' al español", answer: "feliz navidad", answers: ["feliz navidad", "felices fiestas"], errort: "Traduce 즐거운 성탄절 되세요", image: corea_esp2, codigo: "Feliz pre-Navidad para vosotros también 🎄 Bolsa 22 disponible" },
     { day: 23, type: "puzzle", question: "¿Qué significado tiene el 1er código?", answer: "aniversario", answers: ["nuestro aniversario"], image: puzzle2, codigo: "" },
     { day: 24, type: "puzzle", question: "Ordena el calendario igual que los eventos recibidos en whatssapp", answer: "completado", image: puzzle },
   ];
